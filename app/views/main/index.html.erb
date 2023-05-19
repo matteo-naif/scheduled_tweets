@@ -3,9 +3,7 @@
   <div class="mb-3">
     <i class="bi bi-person-circle"></i>
     <%= @user.email %>
-    <%= button_to "Logout", logout_path, class:"btn btn-link", method: :delete %>
+    <%= button_to "<i class='bi bi-box-arrow-right'></i> Logout".html_safe, logout_path, class:"btn btn-link", method: :delete %>
   </div>
 <% else %>
-  Login
-  <%#= link_to "Login", login_path, class:"" %>
 <% end %>
