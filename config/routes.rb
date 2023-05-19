@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get "sign_up", to: "registrations#new"
   # POST /sign_up
   post "sign_up", to: "registrations#create"
+  # GET /logout
+  delete "logout", to: "sessions#destroy"
   # GET /
   root to: "main#index"
 end
