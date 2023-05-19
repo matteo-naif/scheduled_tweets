@@ -1,0 +1,14 @@
+<div class="fixed-bottom container">
+  <%# Flash notice %>
+  <% if flash[:notice] %>
+    <div class="alert alert-info hideMe" role="alert">
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
+  <%# Flash alert %>
+  <% if flash[:alert] %>
+    <div class="alert alert-warning hideMe" role="alert">
+      <%= flash[:alert] %>
+    </div>
+  <% end %>
+</div>
