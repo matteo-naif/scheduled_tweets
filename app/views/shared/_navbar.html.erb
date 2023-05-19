@@ -21,14 +21,21 @@ end
         </li>
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
-        <%# Signup %>
-        <li class="nav-item <%= active_class(sign_up_path) %>">
-          <%= link_to "Signup", sign_up_path, class:"nav-link" %>
-        </li>
-        <%# Signin %>
-        <li class="nav-item <%= active_class(sign_in_path) %>">
-          <%= link_to "<i class='bi bi-box-arrow-in-right'></i> Signin".html_safe, sign_in_path, class:"nav-link" %>
-        </li>
+        <% if Current.user %>
+          <span class="navbar-text">
+            <%= Current.user.email %>
+          </span>
+          <%= button_to "<i class='bi bi-box-arrow-right'></i>".html_safe, logout_path, class:"btn", method: :delete, title: "logout" %>
+        <% else %>
+          <%# Signup %>
+          <li class="nav-item <%= active_class(sign_up_path) %>">
+            <%= link_to "Signup", sign_up_path, class:"nav-link" %>
+          </li>
+          <%# Signin %>
+          <li class="nav-item <%= active_class(sign_in_path) %>">
+            <%= link_to "Sign in", sign_in_path, class:"nav-link" %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
