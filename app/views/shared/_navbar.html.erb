@@ -22,9 +22,7 @@ end
       </ul>
       <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
         <% if Current.user %>
-          <span class="navbar-text">
-            <%= Current.user.email %>
-          </span>
+          <%= link_to Current.user.email, edit_password_path, class: "nav-link" %>
           <%= button_to "<i class='bi bi-box-arrow-right'></i>".html_safe, logout_path, class:"btn", method: :delete, title: "logout" %>
         <% else %>
           <%# Signup %>
