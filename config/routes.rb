@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   # PATCH /password
   patch "password", to: "passwords#update"
 
+  # GET /password/reset
+  get "password/reset", to: "password_resets#new"
+  # POST /password/reset
+  post "password/reset", to: "password_resets#create"
+
   # GET /sign_up
   get "sign_up", to: "registrations#new"
   # POST /sign_up
